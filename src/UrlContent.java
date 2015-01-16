@@ -28,15 +28,23 @@ public class UrlContent{
             total_info += inputLine;
         System.out.println(total_info);
         JSONParser parser=new JSONParser();
-        Object obj=parser.parse(total_info);
-        JSONObject obj1 = (JSONObject) obj;
+        JSONObject obj= (JSONObject)parser.parse(total_info);
         System.out.println("debug");
         System.out.println("getting name");
-        String name = (String)obj1.get("name");
-        System.out.println(name);
+
+        System.out.println(getName(obj));
+        System.out.println(getTemp(obj));
 
         in.close();
 
+    }
+
+    public static double getTemp(JSONObject data){
+        return (double)((JSONObject)data.get("main")).get("temp");
+    }
+
+    public static String getName(JSONObject data){
+        return (String)data.get("name");
     }
 
 }
