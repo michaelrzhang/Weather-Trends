@@ -13,6 +13,7 @@ public class Test{
 	public static void main(String[] args) throws Exception{
 		CurrentWeatherData test = new CurrentWeatherData(5350734);
 		System.out.println(test.getCityID());
+		System.out.println(test.getLat());
 		System.out.println(test.getName());
 		System.out.println(test.getTemp());
 	}

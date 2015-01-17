@@ -41,6 +41,14 @@ public class CurrentWeatherData{
         return cityID;
     }
 
+    public double getLat(){
+        return (double)((JSONObject)city_data.get("coord")).get("lat");
+    }
+
+    public double getLon(){
+        return (double)((JSONObject)city_data.get("coord")).get("lon");
+    }
+
     public double getTemp(){
     //implement celsius and fahrehenit ways
         return (double)((JSONObject)city_data.get("main")).get("temp");
